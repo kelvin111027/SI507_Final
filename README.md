@@ -60,7 +60,7 @@ NearbyHotel()
   First for this repository, download all the files and foler  
 - Set up secrets.py
   Acquire all the keys required following previous links. Put them in a python fil named "secrets", below is a sample secrets.py content, same format should be followed:
-        yelp_api_key = <yelp_api_key>
+        `<addr>` yelp_api_key = <yelp_api_key>
         PLOTLY_USERNAME = <plotly_username>
         PLOTLY_API_KEY = <plotly_api_key>
         MAPBOX_TOKEN = <map_box_token>
