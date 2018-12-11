@@ -1,0 +1,12 @@
+<link rel="stylesheet" href="/static/style.css">
+
+<h1> Welcome to Theme Park Base! </h1>
+<p><a href='/states'>Overview by State</a> <br/> <a href='/graph'>Ranking of rollercoaster by state</a>
+<br/><a href='/piechart'>Pie chart of parks' type</a></p>
+<p>Select State:</p>
+{% for state in state_lst %}
+    <form action="/instate" method="POST">
+          <input type="submit" name="search" value="Search"/> {{state}}
+          <input type='hidden' name='state_chosen' value="{{state}}"/>
+    </form>
+{% endfor %}

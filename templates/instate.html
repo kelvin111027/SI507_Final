@@ -1,0 +1,43 @@
+<link rel="stylesheet" href="/static/style.css">
+<h1>The state of {{state_name}}!</h1>
+<form action="/statemap" method="POST">
+      <input type="submit" name="map" value="map"/>
+      <input type='hidden' name='statemap' value="{{state_name}}"/>
+</form>
+
+
+<a href='/'>go back</a>
+<table border=1>
+    <tr>
+        <th>Park</th>
+        <th>Type</th>
+        <th>Open year</th>
+        <th>Size</th>
+        <th>Rollercoaster</th>
+        <th>Attraction</th>
+        <th>Address</th>
+        <th>Image</th>
+        <th>Lodge nearby</th>
+    </tr>
+{%for p in instate %}
+    <tr>
+        <td>{{p[2]}}</td>
+        <td>{{p[1]}}</td>
+        <td>{{p[3]}}</td>
+        <td>{{p[4]}}</td>
+        <td>{{p[6]}}</td>
+        <td>{{p[5]}}</td>
+        <td>{{p[7]}}</td>
+        {% if p[-1] != None and p[-1][0] == 'h' %}
+            <td><a href='{{p[-1]}}'>image</a></td>
+        {% endif %}
+        {% if p[-1] == None or p[-1][0] != 'h' %}
+            <td>N/A</td>
+        {% endif %}
+        <form action="/lodge" method="POST">
+              <td><input type="submit" name="search" value="Lodge"/></td>
+              <input type='hidden' name='park_chosen' value="{{p[2]}}"/>
+        </form>
+    </tr>
+{% endfor %}
+</table>

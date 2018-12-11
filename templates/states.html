@@ -1,0 +1,36 @@
+<link rel="stylesheet" href="/static/style.css">
+
+<h1> Theme Parks Overview  </h1>
+<a href='/'>go back</a>
+
+<form action="/states" method="POST">
+    Sort By:<br/>
+    <input type="radio" name="sortby" value="number of park"/> Number of park <br/>
+    <input type="radio" name="sortby" value="most rollercoasters"/> Most rollercoasters <br/>
+    <input type="radio" name="sortby" value="most attractions"/> Most attractions <br/>
+    <br/>
+    Sort Order:<br/>
+    <input type="radio" name="sortorder" value="asc"/> Ascending <br/>
+    <input type="radio" name="sortorder" value="desc"/> Descending <br/>
+    <br/>
+    <input type="submit" name="update" value="Update"/>
+    <br/>
+    <br/>
+</form>
+
+<table border=1>
+    <tr>
+        <th>State</th>
+        <th>Number of theme park</th>
+        <th>Most rollercoaster</th>
+        <th>Most attractions</th>
+    </tr>
+{% for s in states %}
+    <tr>
+        <td>{{s[0]}}</td>
+        <td>{{s[1]}}</td>
+        <td>{{s[2]}}</td>
+        <td>{{s[3]}}</td>
+    </tr>
+{% endfor %}
+</table>

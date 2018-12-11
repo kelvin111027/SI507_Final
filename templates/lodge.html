@@ -1,0 +1,31 @@
+<link rel="stylesheet" href="/static/style.css">
+<h1>Lodges near {{park_name}}!</h1>
+<form action="/lodgemap" method="POST">
+      <input type="submit" name="map" value="map"/>
+      <input type='hidden' name='lodgemap' value="{{park_name}}"/>
+</form>
+
+<a href='/instate'>go back</a>    <a href='/'>home</a>
+<table border=1>
+    <tr>
+        <th>Lodge</th>
+        <th>Rating</th>
+        <th>Address</th>
+        <th>Distance</th>
+        <th>Image</th>
+    </tr>
+{%for h in hotels %}
+    <tr>
+        <td>{{h[1]}}</td>
+        <td>{{h[2]}}</td>
+        <td>{{h[6]}}</td>
+        <td>{{h[7]}}</td>
+        {% if h[8] != None and h[8][0] == 'h' %}
+            <td><a href='{{h[8]}}'>image</a></td>
+        {% endif %}
+        {% if h[8] == None or h[8][0] != 'h' %}
+            <td>N/A</td>
+        {% endif %}
+    </tr>
+{% endfor %}
+</table>

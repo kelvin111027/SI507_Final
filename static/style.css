@@ -1,0 +1,22 @@
+body {
+    background-color: rgb(150, 206, 180);
+}
+h1 {
+    color: rgb(255,238,173);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 44;
+}
+
+p {
+    color: rgb(255,238,173);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20;
+}
+
+table, th, td {
+    border-width: 0.5;
+    border-collapse: collapse;
+    border-style: dashed;
+    padding: 10;
+    color: rgb(217,83,79);
+}
