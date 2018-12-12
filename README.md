@@ -11,7 +11,7 @@
 ### Yelp Fusion
 - Documentation of Yelp Fusion Business Search: https://www.yelp.com/developers/documentation/v3/business_search
 - Yelp API key is required, please refer to: https://www.yelp.com/developers/documentation/v3/authentication
-- This program uses Yelp Fusion to search for the coordinates of parks searched from ultimate rollercoaster and base of that, search for nearby lodges' data.
+- This program uses Yelp Fusion to search for the coordinates of parks searched from ultimate rollercoaster and base on that, search for nearby lodges' data.
 
 ### Plotly
 - http://plot.ly/
